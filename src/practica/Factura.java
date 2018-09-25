@@ -12,15 +12,13 @@ package practica;
 import java.util.ArrayList;
 public class Factura {
     private String cliente;
-    private Fecha fecha;
     private float valorRecibido;
     private float cambio;
     private ArrayList<Producto> productos;
     private float total;
 
-    public Factura(String cliente, Fecha fecha, float valorRecibido) {
+    public Factura(String cliente, float valorRecibido) {
         this.cliente = cliente;
-        this.fecha = fecha;
         this.valorRecibido = valorRecibido;
         this.productos = new ArrayList<Producto>();
         this.total = 0;
@@ -33,14 +31,6 @@ public class Factura {
 
     public void setCliente(String cliente) {
         this.cliente = cliente;
-    }
-
-    public Fecha getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Fecha fecha) {
-        this.fecha = fecha;
     }
 
     public float getValorRecibido() {

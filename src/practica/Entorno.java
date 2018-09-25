@@ -18,7 +18,7 @@ public class Entorno {
      * @param city parametro que se entrega en el main. 
      */
     public Entorno(){
-        this.city = new City();
+        this.city = new City(0,0,16,13);
         this.robots = new Robot[10];
         for(int i = 0; i < 10; i++){
             this.robots[i] = new Robot(this.city, i+2, 7, Direction.WEST);
@@ -50,7 +50,7 @@ public class Entorno {
             if(i == 5){
                 Wall wall = new Wall(this.city,2,i,Direction.SOUTH);
             }
-            if(i == 7){
+            if(i == 6 || i == 7){
                 Wall wall = new Wall(this.city,2,i,Direction.NORTH);
             }
         }
@@ -61,9 +61,9 @@ public class Entorno {
                     Wall wall = new Wall(this.city,i,j,Direction.WEST);
                 }
                 if(j == 1 || j == 3 || j == 7 || j == 10){
-                    Wall wall = new Wall(this.city,i,j,Direction.WEST);
+                    Wall wall = new Wall(this.city,i,j,Direction.EAST);
                 }
-                if(i == 10){
+                if(j == 10 && i == 10){
                     Wall wall = new Wall(this.city,i,j,Direction.SOUTH);
                 }
             }
@@ -96,7 +96,7 @@ public class Entorno {
             if(i == 1 || i == 9){
                 Wall wall = new Wall(this.city,13,i,Direction.EAST);
             }
-            if(i > 4 && i < 9){
+            if(i > 5 && i < 9){
                 Wall wall = new Wall(this.city,13,i,Direction.NORTH);
                 Wall wall2 = new Wall(this.city,13,i,Direction.SOUTH);
             }
@@ -116,6 +116,7 @@ public class Entorno {
             }
             if(i > 1 && i < 5){
                 Wall wall = new Wall(this.city,14,i,Direction.NORTH);
+                Wall wall2 = new Wall(this.city,14,i,Direction.SOUTH);
             }
         }
         

@@ -16,7 +16,7 @@ public class Estante {
     public Estante(String tipo) {
         this.tipo = tipo;
         this.cajas = new Caja[3];
-        for(int i = 0; i < 3; i++){
+        for(int i = 0; i <= 2; i++){
             this.cajas[i] = new Caja(tipo);
         }
     }
@@ -54,10 +54,14 @@ public class Estante {
     }
     
     public void eliminarProducto(){
-        for(int i = 2; i >= 0; i--){
-            if(this.cajas[i].eliminarProducto() == true){
-                this.cajas[i].eliminarProducto();
+        for(int i = 0; i <= 2; i++){
+            for(int j = 0; j <= 6; j++){
+                if(this.cajas[i].getProductos()[j] != null){
+                    this.cajas[i].eliminarProducto();
+                    break;
+                }
             }
+            break;
         }
     }
 }

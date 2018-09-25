@@ -16,7 +16,7 @@ public class Caja {
     public Caja(String tipo){
         this.tipo = tipo;
         this.productos = new Producto[7];
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i <= 6; i++){
             this.productos[i] = new Producto(tipo);
         }
     }
@@ -46,20 +46,15 @@ public class Caja {
         return false;
     }
     
-    public boolean eliminarProducto(){
+    public void eliminarProducto(){
         if(this.productos[0] == null){
-            return false;
-        }
-        int i = 0;
-        while(this.productos[i] != null && i < 7){
-            i++;
-        }
-
-        if(i < 7){
-            this.productos[i-1] = null;
-            return true;
         }else{
-            return false;
+            for(int i = 0; i <= 6; i++){
+                if(this.productos[i] != null){
+                    this.productos[i] = null;
+                    break;
+                }
+            }
         }
     }
 }
